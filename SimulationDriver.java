@@ -23,16 +23,19 @@ public class SimulationDriver {
         Random random = new Random();
         int numAnswers = random.nextInt(ans.length) + 1; // Randomly choose the number of answers
         List<String> studentChoices = new ArrayList<String>();
-
+    
         while (studentChoices.size() < numAnswers) {
             int randomIndex = random.nextInt(ans.length); // Randomly choose an answer
             String randomAnswer = ans[randomIndex];
-
-            studentChoices.add(randomAnswer); // Allow duplicates
+    
+            if (!studentChoices.contains(randomAnswer)) {
+                studentChoices.add(randomAnswer); // Allow duplicates
+            }
         }
-
+    
         return studentChoices.toArray(new String[0]);
     }
+    
 
     private static void multipleChoice() {
         String question = "What are your favorite sports?";
