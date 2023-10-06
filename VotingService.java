@@ -3,14 +3,12 @@ import java.util.List;
 
 public class VotingService {
     private String type;
-    private String question;
     private List<String> candidateAnswer = new ArrayList<String>();
     private List<Student> students = new ArrayList<Student>();
     private int[] count;
 
     public VotingService(Question question, String type) {
         this.type = type;
-        this.question = question.getQuestionAsked();
         this.candidateAnswer = question.getChoices();
         count = new int[this.candidateAnswer.size()];
     }
