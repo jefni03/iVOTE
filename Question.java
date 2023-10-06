@@ -8,10 +8,9 @@ public class Question
 	private List<String> correctAnswers = new ArrayList<String>();
 	private ArrayList<String> choices = new ArrayList<String>();
 	
-	public Question(String asked, String[] answer, String[] choice)
+	public Question(String asked, String[] choice)
 	{
 		this.questionAsked = asked;
-		Collections.addAll(this.correctAnswers, answer);
 		Collections.addAll(this.choices, choice);
 		System.out.println("Choices list size: " + this.choices.size());
 	}
